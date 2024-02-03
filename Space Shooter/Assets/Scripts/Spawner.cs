@@ -48,7 +48,6 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        Debug.Log("Spawning Enemy");
         GameObject enemy = Instantiate(enemyToSpawn, transform.position, transform.rotation);
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         if (enemyScript != null)

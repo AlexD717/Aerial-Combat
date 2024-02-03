@@ -12,11 +12,13 @@ public class Player : MonoBehaviour
     public float cooldown;
     private float nextShootTime;
     public GameObject bulletPrefab;
-    [SerializeField] private Transform shootPoint;
+    [SerializeField] private Transform firePoint;
     [SerializeField] private GameMaster gameMaster;
     [SerializeField] private float yOffset;
 
     [SerializeField] HealthBar healthBar;
+
+    private int level = 1;
 
     private void Start()
     {
@@ -43,9 +45,30 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Shoot()
+    private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+        if (level >= 10)
+        {
+            Vector3 offset = new Vector3(0.15f, 0, 0);
+            FireWeapon(bulletPrefab, firePoint.position, firePoint.rotation);
+            FireWeapon(bulletPrefab, firePoint.position + offset, firePoint.rotation);
+            FireWeapon(bulletPrefab, firePoint.position - offset, firePoint.rotation);
+        }
+        else if (level >= 5)
+        {
+            Vector3 offset = new Vector3(0.1f, 0, 0);
+            FireWeapon(bulletPrefab, firePoint.position + offset, firePoint.rotation);
+            FireWeapon(bulletPrefab, firePoint.position - offset, firePoint.rotation);
+        }
+        else
+        {
+            FireWeapon(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    private void FireWeapon(GameObject bulletPrefab, Vector3 bulletPosition, Quaternion bulletRotation)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletPosition, bulletRotation);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.damage = damage;
     }
@@ -88,6 +111,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.tag == "Weapon Power Up")
         {
+            level += 1;
             cooldown = cooldown * 0.9f;
         }
     }

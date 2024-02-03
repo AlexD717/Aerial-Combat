@@ -233,7 +233,7 @@ MonoBehaviour:
   health: 0
   cooldown: 0.4
   bulletPrefab: {fileID: 4399412028193533043, guid: 5017bb18a92b313468b5cdcf4a94a1b0, type: 3}
-  shootPoint: {fileID: 3036687040509034542}
+  firePoint: {fileID: 3036687040509034542}
   gameMaster: {fileID: 0}
   yOffset: 0.75
   healthBar: {fileID: 3036687039651404123}

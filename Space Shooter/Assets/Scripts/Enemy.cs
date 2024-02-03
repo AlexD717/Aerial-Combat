@@ -21,10 +21,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool useHealthBar;
     [SerializeField] private HealthBar healthBar;
 
+    private bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
         GameMaster.totalEnemies += 1;
+        Debug.Log("Total Enemies: " + GameMaster.totalEnemies);
 
         foreach (Transform child in waypointFather)
         {
@@ -90,8 +93,9 @@ public class Enemy : MonoBehaviour
             healthBar.health -= amount;
             healthBar.HealthBarFiller();
         }
-        if (health <= 0)
+        if (health <= 0 && !dead)
         {
+            dead = true;
             Killed();
         }
     }
@@ -99,7 +103,8 @@ public class Enemy : MonoBehaviour
     void Killed()
     {
         GameMaster.enemiesDestroyed += 1;
-        Debug.Log(GameMaster.enemiesDestroyed);
+        Debug.Log("Total Enemies: " + GameMaster.totalEnemies);
+        Debug.Log("Enemies Destroyed: " + GameMaster.enemiesDestroyed);
         spawner.EnemyDied(transform);
         GameObject _explosion = Instantiate(explosion, transform.position, transform.rotation);
         Destroy(_explosion, 2f);

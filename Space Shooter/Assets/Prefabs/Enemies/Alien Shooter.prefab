@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 7
-  maxHealth: 7
+  maxHealth: 11
   waypointFather: {fileID: 0}
   waypoints: []
   speed: 1

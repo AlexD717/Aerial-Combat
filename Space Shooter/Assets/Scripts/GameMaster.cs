@@ -46,7 +46,7 @@ public class GameMaster : MonoBehaviour
 
     void GameOver()
     {
-        float percentageDestroyed = ((float)enemiesDestroyed / totalEnemies) * 100;
+        float percentageDestroyed = (float)enemiesDestroyed / totalEnemies * 100;
         int roundedPercentage = Mathf.RoundToInt(percentageDestroyed);
         enemiesDestroyedText.text = "Enemies Destroyed: " + roundedPercentage + "%";
 

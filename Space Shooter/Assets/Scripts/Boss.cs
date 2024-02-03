@@ -18,6 +18,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
         GameMaster.totalEnemies += 1;
+        Debug.Log(GameMaster.totalEnemies);
         foreach (BossComponent child in transform.GetComponentsInChildren<BossComponent>())
         {
             parts.Add(child);
