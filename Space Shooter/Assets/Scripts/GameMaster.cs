@@ -24,6 +24,7 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1.0f;
         enemiesDestroyed = 0;
         totalEnemies = 0;
 
@@ -86,6 +87,12 @@ public class GameMaster : MonoBehaviour
         if (!gameOver)
         {
             playerDiedMenu.SetActive(true);
+            Invoke("StopTime", 1.6f);
         }
+    }
+
+    private void StopTime()
+    {
+        Time.timeScale = 0f;
     }
 }

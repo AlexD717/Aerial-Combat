@@ -25,21 +25,21 @@ public class Bullet : MonoBehaviour
             Enemy enemy = collision.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
 
-            Destroy(gameObject);
+            Death();
         }
         else if (collision.tag == "Boss Component")
         {
             BossComponent bossComponent = collision.GetComponent<BossComponent>();
             bossComponent.TakeDamage(damage);
 
-            Destroy(gameObject);
+            Death();
         }
         else if (collision.tag == "Boss")
         {
             Boss boss = collision.GetComponent<Boss>();
             boss.TakeDamage(damage);
 
-            Destroy(gameObject);
+            Death();
         }
     }
 

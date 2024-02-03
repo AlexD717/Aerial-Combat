@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,15 @@ public class Enemy : MonoBehaviour
             waypoints.Add(child);
         }
 
-        player = GameObject.Find("Player").transform;
+        try
+        {
+            player = GameObject.Find("Player").transform;
+        }
+        catch (NullReferenceException e)
+        {
+            player = null;
+            Debug.Log("Player not found");
+        }
 
         // Health Bar
         health = maxHealth;
@@ -57,7 +66,7 @@ public class Enemy : MonoBehaviour
                 Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 270;
 
-                if (lookAtPlayer)
+                if (lookAtPlayer && player != null)
                 {
                     direction = player.position - transform.position;
                     angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90;
