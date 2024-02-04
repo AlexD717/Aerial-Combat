@@ -7,16 +7,16 @@ public class UIButtons : MonoBehaviour
 {
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Loader.Load(SceneManager.GetActiveScene().name);
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        Loader.Load("Main Menu");
     }
 
     public void LoadLevel(int level)
     {
-        SceneManager.LoadScene("Level " + level);
+        Loader.Load("Level " + level);
     }
 }
