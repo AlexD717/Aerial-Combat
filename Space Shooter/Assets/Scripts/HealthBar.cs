@@ -10,6 +10,7 @@ public class HealthBar : MonoBehaviour
     public float health;
     public float startLerpSpeed;
     public float lerpSpeed;
+    [SerializeField] private bool destroyBackround;
 
     private void Update()
     {
@@ -20,6 +21,12 @@ public class HealthBar : MonoBehaviour
     public void HealthBarFiller()
     {
         healthBar.fillAmount = Mathf.Lerp(health / maxHealth, healthBar.fillAmount, lerpSpeed);
+        
+        if (destroyBackround && health <= 0)
+        {
+            DestoryBackround();
+        }
+
         ColorChanger();
     }
 
@@ -27,5 +34,14 @@ public class HealthBar : MonoBehaviour
     {
         Color healthColor = Color.Lerp(Color.red, Color.green, health / maxHealth);
         healthBar.color = healthColor;
+    }
+
+    private void DestoryBackround()
+    {
+        GameObject backround = transform.parent.GetChild(0).gameObject;
+        if (backround != null )
+        {
+            Destroy(backround);
+        }
     }
 }

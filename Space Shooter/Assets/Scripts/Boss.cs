@@ -14,6 +14,8 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private List<BossComponent> parts;
 
+    private bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +58,9 @@ public class Boss : MonoBehaviour
             health -= amount;
             healthBar.health -= amount;
             healthBar.HealthBarFiller();
-            if (health <= 0)
+            if (!dead && health <= 0)
             {
+                dead = true;
                 Killed();
             }
         }

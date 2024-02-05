@@ -87,6 +87,7 @@ public class GameMaster : MonoBehaviour
 
         gameOverMenu.SetActive(true);
         Destroy(player, 2f);
+        Invoke("StopTime", 3.1f);
     }
 
     public void PlayerDied()

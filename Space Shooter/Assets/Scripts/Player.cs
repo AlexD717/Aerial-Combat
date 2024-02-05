@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
         else if (collision.tag == "Weapon Power Up")
         {
             level += 1;
-            cooldown = cooldown * 0.9f;
+            cooldown = cooldown * 0.92f;
         }
     }
 }

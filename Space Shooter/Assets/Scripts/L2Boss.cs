@@ -24,14 +24,12 @@ public class L2Boss : MonoBehaviour
     {
         foreach (Transform firepoint in firepointWings)
         {
-            if (firepoint == null)
+            if (firepoint != null)
             {
-                return;
+                GameObject missle = Instantiate(wingMissle, firepoint.position, Quaternion.Euler(0, 0, wingWeaponRotations[currentWingRotationIndex]));
+                EnemyBullet missleScript = missle.GetComponent<EnemyBullet>();
+                missleScript.damage = wingWeaponDamage;
             }
-
-            GameObject missle = Instantiate(wingMissle, firepoint.position, Quaternion.Euler(0, 0, wingWeaponRotations[currentWingRotationIndex]));
-            EnemyBullet missleScript = missle.GetComponent<EnemyBullet>();
-            missleScript.damage = wingWeaponDamage;
         }
 
         currentWingRotationIndex = (currentWingRotationIndex + 1) % wingWeaponRotations.Length;
