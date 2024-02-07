@@ -7,8 +7,16 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float damage;
 
+    [SerializeField] private Sprite[] bulletColors;
+    private int bulletColorInt;
+    private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        bulletColorInt = PlayerPrefs.GetInt("ShipColorInt", 0);
+        spriteRenderer.sprite = bulletColors[bulletColorInt];
+
         Invoke("Death", 2f);    
     }
 

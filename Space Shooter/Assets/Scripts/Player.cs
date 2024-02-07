@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     [SerializeField] private GameMaster gameMaster;
     [SerializeField] private float yOffset;
 
+    [SerializeField] private Sprite[] shipColors;
+    private int shipColorInt;
+    private SpriteRenderer spriteRenderer;
     [SerializeField] HealthBar healthBar;
 
     private int level = 1;
@@ -27,6 +30,10 @@ public class Player : MonoBehaviour
 
         healthBar.maxHealth = maxHealth;
         healthBar.health = health;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        shipColorInt = PlayerPrefs.GetInt("ShipColorInt", 0);
+        spriteRenderer.sprite = shipColors[shipColorInt];
     }
 
     void Update()

@@ -94,6 +94,7 @@ MonoBehaviour:
   health: 0
   startLerpSpeed: 3
   lerpSpeed: 0
+  destroyBackround: 0
 --- !u!1 &3036687040509034543
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +237,11 @@ MonoBehaviour:
   firePoint: {fileID: 3036687040509034542}
   gameMaster: {fileID: 0}
   yOffset: 0.75
+  shipColors:
+  - {fileID: 21300000, guid: c65ca52d0f0772d4c86bad63fdcf4742, type: 3}
+  - {fileID: 21300000, guid: 727bbfe3873fec74eaf906c5e4337a51, type: 3}
+  - {fileID: 21300000, guid: 113783b27ec57644c8546e829cd217ad, type: 3}
+  - {fileID: 21300000, guid: 73fc91329ea599f41a09bace6b5dbaf7, type: 3}
   healthBar: {fileID: 3036687039651404123}
 --- !u!60 &3036687040836106183
 PolygonCollider2D:

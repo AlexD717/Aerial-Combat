@@ -24,4 +24,9 @@ public class UIButtons : MonoBehaviour
     {
         Loader.Load("Level " + level);
     }
+
+    public void Upgrade()
+    {
+        Loader.Load("Upgrade");
+    }
 }
