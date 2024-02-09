@@ -38,8 +38,9 @@ public class BGMusic : MonoBehaviour
         {
             int currentLevel = int.Parse(sceneName.Substring(sceneName.Length - 1));
             audioSource.clip = bgMusic[currentLevel];
+            audioSource.Stop();
         }
-        else
+        else if (sceneName != "Loading")
         {
             if (audioSource.clip != bgMusic[0])
             {
@@ -51,5 +52,15 @@ public class BGMusic : MonoBehaviour
         {
             audioSource.Play();
         }
+    }
+
+    public void Pause()
+    {
+        audioSource.Pause();
+    }
+
+    public void Play()
+    {
+        audioSource.Play();
     }
 }
