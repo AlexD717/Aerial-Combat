@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 6
+  moneyToGiveOnDeath: 2
+  coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
   waypointFather: {fileID: 0}
   waypoints: []
   speed: 2.5
@@ -430,3 +432,4 @@ MonoBehaviour:
   health: 0
   startLerpSpeed: 3
   lerpSpeed: 0
+  destroyBackround: 0

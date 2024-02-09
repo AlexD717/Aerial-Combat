@@ -10,6 +10,12 @@ public static class Loader
 
     public static void Load(string scene)
     {
+        if (CoinMaster.coinsCollected > 0)
+        {
+            CoinMaster.SaveCoinsCollected();
+            Debug.Log("Coins Saved");
+        }
+
         loadingSceneName = scene;
         SceneManager.LoadScene("Loading");
     }

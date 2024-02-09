@@ -4,8 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
-using JetBrains.Annotations;
 
 public class GameMaster : MonoBehaviour
 {
@@ -22,6 +20,8 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private Sprite starOn;
 
     [SerializeField] private GameObject playerDiedMenu;
+    [SerializeField] private TextMeshProUGUI coinsCollectedTextPlayerWon;
+    [SerializeField] private TextMeshProUGUI coinsCollectedTextPlayerDied;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class GameMaster : MonoBehaviour
     {
         if (scroll.transform.childCount <= 0 && !gameOver)
         {
-            if (GameObject.FindGameObjectWithTag("Boss") == null)
+            if (GameObject.FindGameObjectWithTag("Boss") == null && GameObject.Find("CoinScroller").transform.childCount <= 0)
             {
                 gameOver = true;
                 Invoke("GameOver", 1f);
@@ -85,18 +85,30 @@ public class GameMaster : MonoBehaviour
             PlayerPrefs.SetInt("StarsLevel" + currentLevel, 3);
         }
 
-        gameOverMenu.SetActive(true);
-        Destroy(player, 2f);
-        Invoke("StopTime", 3.1f);
+        PlayerWon();
     }
 
     public void PlayerDied()
     {
         if (!gameOver)
         {
+            gameOver = true;
+            coinsCollectedTextPlayerDied.text = CoinMaster.coinsCollected.ToString("F0");
+            Debug.Log(coinsCollectedTextPlayerDied.text);
+            Debug.Log(CoinMaster.coinsCollected.ToString("F0"));
             playerDiedMenu.SetActive(true);
+            CoinMaster.SaveCoinsCollected();
             Invoke("StopTime", 1.6f);
         }
+    }
+
+    private void PlayerWon()
+    {
+        coinsCollectedTextPlayerWon.text = CoinMaster.coinsCollected.ToString("F0");
+        gameOverMenu.SetActive(true);
+        CoinMaster.SaveCoinsCollected();
+        //Destroy(player, 2f);
+        Invoke("StopTime", 3.1f);
     }
 
     private void StopTime()

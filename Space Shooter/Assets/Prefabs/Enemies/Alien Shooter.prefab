@@ -227,6 +227,7 @@ MonoBehaviour:
   health: 0
   startLerpSpeed: 3
   lerpSpeed: 0
+  destroyBackround: 0
 --- !u!1 &3122858417429472237
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +505,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 7
   maxHealth: 11
+  moneyToGiveOnDeath: 5
+  coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
   waypointFather: {fileID: 0}
   waypoints: []
   speed: 1

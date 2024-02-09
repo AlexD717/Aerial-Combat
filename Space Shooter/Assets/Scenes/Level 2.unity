@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1134587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134589}
+  - component: {fileID: 1134588}
+  m_Layer: 0
+  m_Name: CoinScroller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1134588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe256e4870a1cf4e9038068120f1e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+--- !u!4 &1134589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 1140, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &63695105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1274,7 @@ RectTransform:
   - {fileID: 982081148}
   - {fileID: 936579117}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1261,6 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1278239748}
+  coinsText: {fileID: 1278239750}
 --- !u!1 &652634927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,7 +2141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6623919564865248467, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6623919565235163599, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2103,7 +2149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6623919565235163599, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6623919565235163599, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2130,11 +2176,6 @@ PrefabInstance:
 --- !u!4 &1155033409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6623919564865248465, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
-  m_PrefabInstance: {fileID: 1155033408}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1155033410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6623919564865248467, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
   m_PrefabInstance: {fileID: 1155033408}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1226927811
@@ -2203,7 +2244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234812792 stripped
 GameObject:
@@ -2442,6 +2483,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4204492113420813647, guid: e1cf0a42ac43f1b49be2b577cf8f5fa3, type: 3}
   m_PrefabInstance: {fileID: 1278239747}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1278239750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2410428479539293298, guid: e1cf0a42ac43f1b49be2b577cf8f5fa3, type: 3}
+  m_PrefabInstance: {fileID: 1278239747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1288153444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,7 +2626,7 @@ Transform:
   - {fileID: 1155033409}
   - {fileID: 1570475463}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1307139326 stripped
 MonoBehaviour:
@@ -2610,10 +2662,6 @@ PrefabInstance:
       propertyPath: numEnemiesToSpawn
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6623919564865248464, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
-      propertyPath: spawnerToActivate
-      value: 
-      objectReference: {fileID: 1155033410}
     - target: {fileID: 6623919564865248464, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: numKilledForPowerUp
       value: 6
@@ -2752,6 +2800,8 @@ MonoBehaviour:
   stars: {fileID: 938400710}
   starOn: {fileID: 21300048, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   playerDiedMenu: {fileID: 936579116}
+  coinsCollectedTextPlayerWon: {fileID: 3736092993140238012}
+  coinsCollectedTextPlayerDied: {fileID: 8200140494047500673}
 --- !u!4 &1392311202
 Transform:
   m_ObjectHideFlags: 0
@@ -3558,6 +3608,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 238b52d6e5bc7b04b892c8acaa391a73, type: 3}
+--- !u!114 &3736092993140238012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8627922323189419291, guid: 238b52d6e5bc7b04b892c8acaa391a73, type: 3}
+  m_PrefabInstance: {fileID: 3736092993140238011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8200140494047500672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3667,3 +3728,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 728d6a305ece5b246a8589656d31d488, type: 3}
+--- !u!114 &8200140494047500673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 126872817, guid: 728d6a305ece5b246a8589656d31d488, type: 3}
+  m_PrefabInstance: {fileID: 8200140494047500672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

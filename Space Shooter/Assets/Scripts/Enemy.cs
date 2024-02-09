@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 {
     [HideInInspector] public float health;
     [SerializeField] private float maxHealth;
+    [SerializeField] private float moneyToGiveOnDeath;
+    [SerializeField] private GameObject coinManager;
+
     public Transform waypointFather;
     public List<Transform> waypoints;
     public float speed = 5.0f;
@@ -103,11 +106,13 @@ public class Enemy : MonoBehaviour
     void Killed()
     {
         GameMaster.enemiesDestroyed += 1;
-        Debug.Log("Total Enemies: " + GameMaster.totalEnemies);
-        Debug.Log("Enemies Destroyed: " + GameMaster.enemiesDestroyed);
         spawner.EnemyDied(transform);
         GameObject _explosion = Instantiate(explosion, transform.position, transform.rotation);
+        CoinManager _coinManager = Instantiate(coinManager, transform.position, transform.rotation).GetComponent<CoinManager>();
+        _coinManager.moneyToGive = moneyToGiveOnDeath;
+        _coinManager.GiveMoney();
         Destroy(_explosion, 2f);
+        Destroy(_coinManager.gameObject, 2f);
         Destroy(gameObject);
     }
 }

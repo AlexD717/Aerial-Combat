@@ -16,6 +16,11 @@ public class Boss : MonoBehaviour
 
     private bool dead = false;
 
+    [Header("Coins")]
+    [SerializeField] private GameObject coinManager;
+    [SerializeField] private float moneyToGiveOnDeath;
+    [SerializeField] private Vector2 coinSpread;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +76,10 @@ public class Boss : MonoBehaviour
         GameMaster.enemiesDestroyed += 1;
         Debug.Log(GameMaster.enemiesDestroyed);
         GameObject _explosion = Instantiate(explosion, transform.position, transform.rotation);
+        CoinManager _coinManger = Instantiate(coinManager, transform.position, transform.rotation).GetComponent<CoinManager>();
+        _coinManger.moneyToGive = moneyToGiveOnDeath;
+        _coinManger.moneySpreadRange = coinSpread;
+        _coinManger.GiveMoney();
         Destroy(_explosion, 2f);
         //GameObject canvas = healthBar.transform.gameObject;
         //Destroy(canvas);

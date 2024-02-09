@@ -488,6 +488,9 @@ MonoBehaviour:
   explosion: {fileID: 139366, guid: 034cda613260ece4ab0738b1c82eddbc, type: 3}
   healthBar: {fileID: 749964245294467405}
   parts: []
+  coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
+  moneyToGiveOnDeath: 24
+  coinSpread: {x: -2, y: 2}
 --- !u!1 &1348890828386474667
 GameObject:
   m_ObjectHideFlags: 0
