@@ -34,7 +34,7 @@ public class Upgrades : MonoBehaviour
         UpdateHealthText();
 
         mainWeaponUpgradeCostText = mainWeaponUpgradeButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        mainWeaponUpgradeCost = PlayerPrefs.GetFloat("mainWeaponUpgradeCost", 70f);
+        mainWeaponUpgradeCost = PlayerPrefs.GetFloat("mainWeaponUpgradeCost", 60f);
         UpdateMainWeaponText();
 
         moreCoinsUpgradeCostText = moreCoinsUpgradeButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
@@ -73,14 +73,14 @@ public class Upgrades : MonoBehaviour
             coins -= healthUpgradeCost;
             UpdateCoins();
 
-            float healthUpgradeCostMult = 1.25f;
+            float healthUpgradeCostMult = 1.15f;
             healthUpgradeCost *= healthUpgradeCostMult;
             healthUpgradeCost = Mathf.Ceil(healthUpgradeCost);
             UpdateHealthText();
             PlayerPrefs.SetFloat("healthUpgradeCost", healthUpgradeCost);
 
             float playerHealth = PlayerPrefs.GetFloat("playerHealth", 10f);
-            float playerHealthIncrease = 0.1f;
+            float playerHealthIncrease = 0.2f;
             playerHealth += playerHealthIncrease;
             PlayerPrefs.SetFloat("playerHealth", playerHealth);
         }
@@ -98,14 +98,14 @@ public class Upgrades : MonoBehaviour
             coins -= mainWeaponUpgradeCost;
             UpdateCoins();
 
-            float mainWeaponUpgradeCostMult = 1.2f;
+            float mainWeaponUpgradeCostMult = 1.15f;
             mainWeaponUpgradeCost *= mainWeaponUpgradeCostMult;
             mainWeaponUpgradeCost = Mathf.Ceil(mainWeaponUpgradeCost);
             UpdateMainWeaponText();
             PlayerPrefs.SetFloat("mainWeaponUpgradeCost", mainWeaponUpgradeCost);
 
             float playerDamage = PlayerPrefs.GetFloat("bulletDamage", 1f);
-            float playerDamageIncrease = 0.05f;
+            float playerDamageIncrease = 0.1f;
             playerDamage += playerDamageIncrease;
             PlayerPrefs.SetFloat("bulletDamage", playerDamage);
 
@@ -142,7 +142,7 @@ public class Upgrades : MonoBehaviour
             PlayerPrefs.SetFloat("moreCoinsUpgradeCost", moreCoinsUpgradeCost);
 
             float extraMoney = PlayerPrefs.GetFloat("extraMoney", 0f);
-            float extraMoneyIncrease = 0.05f;
+            float extraMoneyIncrease = 0.1f;
             extraMoney += extraMoneyIncrease;
             PlayerPrefs.SetFloat("extraMoney", extraMoney);
         }
