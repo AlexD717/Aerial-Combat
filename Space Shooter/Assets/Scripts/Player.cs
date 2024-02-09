@@ -26,8 +26,12 @@ public class Player : MonoBehaviour
     private void Start()
     {
         nextShootTime = Time.time;
-        health = maxHealth;
 
+        maxHealth = PlayerPrefs.GetFloat("playerHealth", 10f);
+        damage = PlayerPrefs.GetFloat("bulletDamage", 1f);
+        cooldown = PlayerPrefs.GetFloat("bulletCooldown", 0.4f);
+
+        health = maxHealth;
         healthBar.maxHealth = maxHealth;
         healthBar.health = health;
 

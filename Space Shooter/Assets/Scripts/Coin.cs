@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public float moneyToGive;
+    private float extraMoney;
 
     private void Start()
     {
@@ -13,6 +14,9 @@ public class Coin : MonoBehaviour
         {
             transform.parent = coinScroller.transform;
         }
+
+        extraMoney = PlayerPrefs.GetFloat("extraMoney", 0f);
+        moneyToGive += extraMoney;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

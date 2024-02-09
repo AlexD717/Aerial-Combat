@@ -7,6 +7,13 @@ public class CoinManager : MonoBehaviour
     public float moneyToGive;
     public Vector2 moneySpreadRange;
     [SerializeField] GameObject coinPrefab;
+    private float extraMoneyPerCoin;
+
+    private void Start()
+    {
+        extraMoneyPerCoin = PlayerPrefs.GetFloat("extraMoney", 0f);
+        Debug.Log(extraMoneyPerCoin);
+    }
 
     public void GiveMoney()
     {
@@ -42,6 +49,9 @@ public class CoinManager : MonoBehaviour
 
     private void SpawnCoin(float moneyToGive, Vector3 offset)
     {
+        moneyToGive += extraMoneyPerCoin;
+        Debug.Log(moneyToGive);
+
         if (moneyToGive >= 10)
         {
             Coin coin = Instantiate(coinPrefab, transform.position + offset, Quaternion.identity).GetComponent<Coin>();
