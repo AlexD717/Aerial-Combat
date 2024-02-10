@@ -56,7 +56,7 @@ public class GameMaster : MonoBehaviour
         int currentLevel = int.Parse(levelName.Substring(levelName.Length - 1));
         int nextlevel = currentLevel + 1;
 
-        if (roundedPercentage >= 70)
+        if (roundedPercentage >= 0)
         {
             stars.GetChild(0).GetComponent<Image>().sprite = starOn;
             
@@ -71,7 +71,7 @@ public class GameMaster : MonoBehaviour
                 PlayerPrefs.SetInt("StarsLevel" + currentLevel, 1);
             }
         }
-        if (roundedPercentage >= 90)
+        if (roundedPercentage >= 85)
         {
             stars.GetChild(1).GetComponent<Image>().sprite = starOn;
             if (PlayerPrefs.GetInt("StarsLevel" + currentLevel, 0) <= 2)
