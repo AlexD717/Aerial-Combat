@@ -15,7 +15,7 @@ public class Upgrades : MonoBehaviour
     [SerializeField] private Button healthUpgradeButton;
     private TextMeshProUGUI healthUpgradeCostText;
     private float healthUpgradeCost;
-    private float healthUpgradeCostMult = 1.5f;
+    private float healthUpgradeCostMult = 1.15f;
     [SerializeField] private Button mainWeaponUpgradeButton;
     private TextMeshProUGUI mainWeaponUpgradeCostText;
     private float mainWeaponUpgradeCost;

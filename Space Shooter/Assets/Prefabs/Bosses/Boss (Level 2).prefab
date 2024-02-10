@@ -417,7 +417,7 @@ MonoBehaviour:
   healthBar: {fileID: 749964245294467405}
   parts: []
   coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
-  moneyToGiveOnDeath: 43
+  moneyToGiveOnDeath: 84
   coinSpread: {x: -1.5, y: 1.5}
 --- !u!1 &1348890828386474667
 GameObject:
