@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public float moneyToGive;
-    private float extraMoney;
+    private float extraMoney = 0f;
 
     private void Start()
     {
@@ -16,13 +16,13 @@ public class Coin : MonoBehaviour
         }
 
         extraMoney = PlayerPrefs.GetFloat("extraMoney", 0f);
-        moneyToGive += extraMoney;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            moneyToGive += extraMoney;
             CoinMaster.coinsCollected += moneyToGive;
             Debug.Log(CoinMaster.coinsCollected);
             Destroy(gameObject);
