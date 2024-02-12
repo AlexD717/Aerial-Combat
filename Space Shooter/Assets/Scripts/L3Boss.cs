@@ -20,8 +20,8 @@ public class L3Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("WingAttack", 2f, wingWeaponCooldown);
-        InvokeRepeating("SideAttack", 1.5f, wingWeaponCooldown + 0.5f);
+        InvokeRepeating("WingAttack", 1.5f, wingWeaponCooldown);
+        InvokeRepeating("SideAttack", 1f, wingWeaponCooldown + 0.5f);
     }
 
     private void WingAttack()

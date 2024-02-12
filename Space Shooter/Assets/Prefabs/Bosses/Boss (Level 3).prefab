@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b50ef95ccba1ad4f9535c4c998a810a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 60
   speed: 5
   rotationSpeed: 5
   movePos: {x: 0, y: 6.5}
@@ -424,7 +424,7 @@ MonoBehaviour:
   healthBar: {fileID: 749964245294467405}
   parts: []
   coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
-  moneyToGiveOnDeath: 84
+  moneyToGiveOnDeath: 99
   coinSpread: {x: -1.5, y: 1.5}
 --- !u!114 &8031538701539901787
 MonoBehaviour:
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08331aadc6a072642a7094ce273f48b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 50
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   healthBar: {fileID: 557762326453892268}
 --- !u!1 &2203228628026292173
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08331aadc6a072642a7094ce273f48b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 50
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   healthBar: {fileID: 6926278411786517198}
 --- !u!1 &5839452022949700019
