@@ -21,6 +21,10 @@ public class Boss : MonoBehaviour
     [SerializeField] private float moneyToGiveOnDeath;
     [SerializeField] private Vector2 coinSpread;
 
+    [SerializeField] private GameObject powerUp;
+    [HideInInspector] public GameObject spawnerToActivate;
+    [HideInInspector] public float powerUpsToDrop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +77,12 @@ public class Boss : MonoBehaviour
 
     void Killed()
     {
+        if (spawnerToActivate != null)
+        {
+            spawnerToActivate.GetComponent<Spawner>().enabled = true;
+            spawnerToActivate.GetComponent<Scroll>().enabled = true;
+        }
+
         GameMaster.enemiesDestroyed += 1;
         Debug.Log(GameMaster.enemiesDestroyed);
         GameObject _explosion = Instantiate(explosion, transform.position, transform.rotation);
@@ -81,6 +91,12 @@ public class Boss : MonoBehaviour
         _coinManger.moneySpreadRange = coinSpread;
         _coinManger.GiveMoney();
         Destroy(_explosion, 2f);
+        for (int i = 0; i < powerUpsToDrop; i++)
+        {
+            float minOffset = coinSpread.x;
+            float maxOffset = coinSpread.y;
+            Instantiate(powerUp, new Vector3(transform.position.x + Random.Range(minOffset, maxOffset), transform.position.y + Random.Range(minOffset, maxOffset), 0), Quaternion.identity);
+        }
         //GameObject canvas = healthBar.transform.gameObject;
         //Destroy(canvas);
         Destroy(gameObject);

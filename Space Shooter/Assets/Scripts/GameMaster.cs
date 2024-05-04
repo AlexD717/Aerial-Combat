@@ -40,8 +40,11 @@ public class GameMaster : MonoBehaviour
         {
             if (GameObject.FindGameObjectWithTag("Boss") == null && GameObject.Find("CoinScroller").transform.childCount <= 0)
             {
-                gameOver = true;
-                Invoke("GameOver", 1f);
+                if (GameObject.FindGameObjectWithTag("Boss Spawner") == null)
+                {
+                    gameOver = true;
+                    Invoke("GameOver", 1f);
+                }
             }
         }
     }

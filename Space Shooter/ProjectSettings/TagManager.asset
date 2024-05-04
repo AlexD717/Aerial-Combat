@@ -8,6 +8,7 @@ TagManager:
   - Weapon Power Up
   - Boss
   - Boss Component
+  - Boss Spawner
   layers:
   - Default
   - TransparentFX

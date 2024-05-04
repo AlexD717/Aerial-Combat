@@ -453,6 +453,9 @@ MonoBehaviour:
   coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
   moneyToGiveOnDeath: 102
   coinSpread: {x: -2, y: 2}
+  powerUp: {fileID: 3592877254477001295, guid: 63240cbfdeb486f4a87798a2433eb8ff, type: 3}
+  spawnerToActivate: {fileID: 0}
+  powerUpsToDrop: 0
 --- !u!114 &8031538701539901787
 MonoBehaviour:
   m_ObjectHideFlags: 0

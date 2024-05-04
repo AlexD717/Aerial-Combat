@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class BGMusic : MonoBehaviour
 {
     [SerializeField] AudioClip[] bgMusic;
+    [SerializeField] float[] volumes;
+
     [SerializeField] private AudioSource audioSource;
 
     private void Awake()
@@ -38,12 +40,14 @@ public class BGMusic : MonoBehaviour
         {
             int currentLevel = int.Parse(sceneName.Substring(sceneName.Length - 1));
             audioSource.clip = bgMusic[currentLevel];
+            audioSource.volume = volumes[currentLevel];
             audioSource.Stop();
         }
         else if (sceneName != "Loading")
         {
             if (audioSource.clip != bgMusic[0])
             {
+                audioSource.volume = volumes[0];
                 audioSource.clip = bgMusic[0];
             }
         }

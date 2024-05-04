@@ -14,12 +14,6 @@ public class CoinManager : MonoBehaviour
         {
             return;
         }
-        /*
-        if (moneyToGive <= 10)
-        {
-            SpawnCoin(moneyToGive, Vector3.zero);
-        }
-        */
         else
         {
             while (moneyToGive > 0)

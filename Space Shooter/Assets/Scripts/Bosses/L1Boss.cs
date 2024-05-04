@@ -21,6 +21,7 @@ public class L1Boss : MonoBehaviour
     [SerializeField] private List<Transform> firepointWings;
     [SerializeField] private GameObject centerMissle;
     [SerializeField] private GameObject wingMissle;
+    [SerializeField] private GameObject nextBoss;
 
     // Start is called before the first frame update
     void Start()

@@ -18,6 +18,8 @@ public class Spawner : MonoBehaviour
     private int timesSpawned = 0;
     [HideInInspector] public int enemiesKilled;
 
+    [SerializeField] private float bossPowerUpsToDrop;
+
     private void Start()
     {
         enemiesKilled = 0;
@@ -55,6 +57,12 @@ public class Spawner : MonoBehaviour
             enemy.transform.parent = transform;
             enemyScript.waypointFather = waypointFather;
             enemyScript.spawner = this;
+        }
+        Boss bossScript = enemy.GetComponent<Boss>();
+        if (bossScript != null)
+        {
+            bossScript.spawnerToActivate = spawnerToActivate;
+            bossScript.powerUpsToDrop = bossPowerUpsToDrop;
         }
 
         timesSpawned += 1;
