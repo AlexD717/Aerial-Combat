@@ -325,6 +325,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4375293231158503269, guid: c4d0bc518cc9e13489dde1e202deebe3, type: 3}
   m_PrefabInstance: {fileID: 18194068}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &18194070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4375293231158503268, guid: c4d0bc518cc9e13489dde1e202deebe3, type: 3}
+  m_PrefabInstance: {fileID: 18194068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &20497947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1264,8 +1275,8 @@ GameObject:
   - component: {fileID: 1026016799}
   - component: {fileID: 1026016798}
   - component: {fileID: 1026016797}
-  - component: {fileID: 1026016802}
   - component: {fileID: 1026016801}
+  - component: {fileID: 1026016802}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1375,6 +1386,7 @@ MonoBehaviour:
   - {fileID: 1667848869}
   - {fileID: 1521774809}
   - {fileID: 20497949}
+  - {fileID: 18194070}
   starOn: {fileID: 21300048, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
 --- !u!114 &1026016802
 MonoBehaviour:
