@@ -265,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 2069874858}
     - target: {fileID: 6623919564865248464, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: bossPowerUpsToDrop
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6623919564865248464, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: numKilledForPowerUp
@@ -1707,7 +1707,7 @@ PrefabInstance:
       objectReference: {fileID: 1778995467}
     - target: {fileID: 6623919564865248464, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: bossPowerUpsToDrop
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6623919564865248464, guid: b8ed5c57d3330a54a869c88a2ad70cbb, type: 3}
       propertyPath: numKilledForPowerUp
