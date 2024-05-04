@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: -2168883234526606504}
   - component: {fileID: -1446286455095537039}
   m_Layer: 0
-  m_Name: Enemy Green
+  m_Name: Enemy Aqua
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 0759b980ba7bba3418353e085b8f3463, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fe3e86f4e6f96348ac11426685fc224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,12 +204,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  maxHealth: 6
-  moneyToGiveOnDeath: 2
+  maxHealth: 5
+  moneyToGiveOnDeath: 3
   coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
   waypointFather: {fileID: 0}
   waypoints: []
-  speed: 2.5
+  speed: 4.5
   rotationSpeed: 10
   lookAtPlayer: 0
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}

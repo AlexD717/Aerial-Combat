@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: -2168883234526606504}
   - component: {fileID: -1446286455095537039}
   m_Layer: 0
-  m_Name: Enemy Green
+  m_Name: Enemy Green v2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  maxHealth: 6
-  moneyToGiveOnDeath: 2
+  maxHealth: 12
+  moneyToGiveOnDeath: 4
   coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
   waypointFather: {fileID: 0}
   waypoints: []
