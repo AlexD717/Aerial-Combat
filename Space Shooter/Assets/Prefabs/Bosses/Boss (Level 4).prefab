@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 1142826787314099656}
   - component: {fileID: 1142826787314099657}
   - component: {fileID: 4045831544823113794}
+  - component: {fileID: -4103382522391521419}
   m_Layer: 0
   m_Name: Boss (Level 4)
   m_TagString: Boss
@@ -485,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b50ef95ccba1ad4f9535c4c998a810a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 200
   speed: 5
   rotationSpeed: 5
   movePos: {x: 0, y: 6.5}
@@ -493,8 +494,45 @@ MonoBehaviour:
   healthBar: {fileID: 749964245294467405}
   parts: []
   coinManager: {fileID: 1745527405056269031, guid: 2777a5379b8f213469e744a0c679e617, type: 3}
-  moneyToGiveOnDeath: 57
+  moneyToGiveOnDeath: 136
   coinSpread: {x: -2, y: 2}
+--- !u!114 &-4103382522391521419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142826787314099653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152450dcf0bb2c04780b3e550963aea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5239619931917471913, guid: cbd1b334b4b24e245be24327df6fb248, type: 3}
+  centerFirePoint: {fileID: 4620556463295452045}
+  centerCooldown: 0.5
+  centerDamage: 2.5
+  centerBulletSpeed: 4.5
+  centerAngles:
+  - -45
+  - -30
+  - -15
+  - 0
+  - 15
+  - 30
+  - 45
+  - 30
+  - 15
+  - 0
+  - -15
+  - -30
+  wingFirePoints:
+  - {fileID: 6262036866599646181}
+  - {fileID: 861592684990664070}
+  wingCooldown: 0.7
+  wingDamage: 1.5
+  wingBulletSpeed: 4
+  wingAngles: {x: -15, y: 30}
 --- !u!1 &1348890828386474667
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08331aadc6a072642a7094ce273f48b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 150
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   healthBar: {fileID: 557762326453892268}
 --- !u!1 &2663299579922330619
@@ -1201,7 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08331aadc6a072642a7094ce273f48b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 150
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   healthBar: {fileID: 6926278411786517198}
 --- !u!1 &5959433905655902465
@@ -1299,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08331aadc6a072642a7094ce273f48b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 225
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   healthBar: {fileID: 5052305728346624211}
 --- !u!1 &6547609651334565626
