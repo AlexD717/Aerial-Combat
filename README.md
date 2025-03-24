@@ -1,2 +1,2 @@
 # Aerial-Combat
-Unity Game
+Unity Space Themed, Vertical Shooter Game
